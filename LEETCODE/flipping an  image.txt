@@ -1,0 +1,12 @@
+class Solution(object):
+    def flipAndInvertImage(self, image):
+        for row in image:
+            i, j = 0, len(row) - 1
+            while i <= j:
+                if i == j:
+                    row[i] ^= 1
+                else:
+                    row[i], row[j] = row[j] ^ 1, row[i] ^ 1
+                i += 1
+                j -= 1
+        return image
